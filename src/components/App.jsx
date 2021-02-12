@@ -3,17 +3,32 @@ import "../css/App.css";
 import data from "../sample_data.json";
 
 function App() {
-  var currentQuestionNumber = 0;
+  var questionNumber = 0;
   return (
     <div className="app">
       Trivia!
-      <Question text="How many planets are there? " />
-      <Question text="How many presidents have there been? " />
+      <Question 
+      text={data[questionNumber]["question"]["text"]} 
+      answerChoices={data[questionNumber]["question"]["choices"]} 
+      />
+      <NextQuestion />
     </div>
   );
 }
-export function Question(props) {
-  return <div>Question : {props.text}</div>;
+ function Question(props) {
+  return(
+   <div>
+    {props.text}
+    <Answer answerChoices= {props.answerChoices} />
+    </div>
+);
 }
 
+function NextQuestion() {
+  return <button>Next Question</button>;
+}
+
+function Answer(props) {
+  return <div>{props.answerChoices}</div>;
+}
 export default App;
