@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import "../css/App.css";
 import data from "../sample_data.json";
-
+import Question from "./Question/Question";
 function App() {
   var questionNumber = 0;
   return (
@@ -14,14 +14,6 @@ function App() {
       <NextQuestion />
     </div>
   );
-}
- function Question(props) {
-  return(
-   <div>
-    {props.text}
-    <Answer answerChoices= {props.answerChoices} />
-    </div>
-);
 }
 
 function NextQuestion() {
