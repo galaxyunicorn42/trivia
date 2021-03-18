@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import "../css/App.css";
 import data from "../sample_data.json";
 import Question from "./Question/Question";
+import NextQuestion from "./NextQuestion/NextQuestion";
 function App() {
   var questionNumber = 0;
   return (
@@ -15,12 +16,7 @@ function App() {
     </div>
   );
 } 
-//hello//
-function NextQuestion() {
-  return <button>Next Question</button>;
-}
 
-function Answer(props) {
-  return <div>{props.answerChoices}</div>;
-}
+
+
 export default App;
